@@ -38,8 +38,11 @@ public class ArrayListDemo {
 //				System.out.println("ENter deptID: ");
 //				final int d2ID=sc.nextInt();
 				Map<Integer,Integer> mp=new HashMap<>();
-				list.stream().forEach((x)-> mp.put(x.getDepid(), mp.getOrDefault(x, 0)));
-				System.out.println(mp.toString());
+				list.stream().forEach((x)-> mp.put(x.getDepid(), mp.getOrDefault(x.getDepid(), 0)+1));
+				
+				System.out.println("Department\tCount");
+				for(Entry<Integer, Integer> e:mp.entrySet())
+					System.out.println(e.getKey()+"\t\t"+e.getValue());
 			break;
 			case 3:
 				System.out.println("Active: ");
